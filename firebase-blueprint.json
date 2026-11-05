@@ -1,0 +1,35 @@
+{
+  "collections": [
+    {
+      "name": "users",
+      "fields": [
+        { "name": "uid", "type": "string" },
+        { "name": "email", "type": "string" },
+        { "name": "emailVerified", "type": "boolean" },
+        { "name": "createdAt", "type": "timestamp" }
+      ],
+      "subcollections": [
+        {
+          "name": "conversations",
+          "fields": [
+            { "name": "participants", "type": "array" },
+            { "name": "lastMessage", "type": "string" },
+            { "name": "lastMessageTimestamp", "type": "timestamp" }
+          ],
+          "subcollections": [
+            {
+              "name": "messages",
+              "fields": [
+                { "name": "senderId", "type": "string" },
+                { "name": "text", "type": "string" },
+                { "name": "timestamp", "type": "timestamp" },
+                { "name": "imageUrl", "type": "string" },
+                { "name": "readBy", "type": "array" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

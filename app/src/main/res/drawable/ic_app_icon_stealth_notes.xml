@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Sticky / notepad background -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M16,12 h68 a8,8 0 0 1 8,8 v60 a8,8 0 0 1 -8,8 h-68 a8,8 0 0 1 -8,-8 v-60 a8,8 0 0 1 8,-8 z" />
+    <!-- White paper page inner -->
+    <path
+        android:fillColor="#FEF3C7"
+        android:pathData="M22,18 h56 a4,4 0 0 1 4,4 v56 a4,4 0 0 1 -4,4 h-56 a4,4 0 0 1 -4,-4 v-56 a4,4 0 0 1 4,-4 z" />
+    <!-- Note ruled lines -->
+    <path
+        android:fillColor="#D97706"
+        android:pathData="M28,30 h44 v3 h-44 z M28,42 h44 v3 h-44 z M28,54 h44 v3 h-44 z M28,66 h30 v3 h-30 z" />
+    <!-- Pencil icon -->
+    <path
+        android:fillColor="#B45309"
+        android:pathData="M64,60 l10,-10 l6,6 l-10,10 l-7,2 z" />
+</vector>

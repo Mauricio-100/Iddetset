@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Cat Silhouette with transparent eye and nose cutouts (No background, Pure WhatsApp-style) -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M 150,130 L 210,210 L 302,210 L 362,130 L 385,280 C 385,360 320,410 256,410 C 192,410 127,360 127,280 Z M 185,255 C 195,245 220,240 235,265 C 220,275 195,270 185,255 Z M 327,255 C 317,245 292,240 277,265 C 292,275 317,270 327,255 Z M 256,295 L 246,310 L 266,310 Z" />
+
+    <!-- Whisker details (pure white stroke on transparent canvas) -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="12"
+        android:strokeLineCap="round"
+        android:pathData="M 115,285 L 60,280" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="12"
+        android:strokeLineCap="round"
+        android:pathData="M 115,310 L 55,315" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="12"
+        android:strokeLineCap="round"
+        android:pathData="M 397,285 L 452,280" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="12"
+        android:strokeLineCap="round"
+        android:pathData="M 397,310 L 457,315" />
+</vector>
+

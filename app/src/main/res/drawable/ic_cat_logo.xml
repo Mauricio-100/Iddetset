@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Red Circle Background -->
+    <path
+        android:fillColor="#DC2626"
+        android:pathData="M256,256m-240,0a240,240 0,1 1,480 0a240,240 0,1 1,-480 0" />
+
+    <!-- Cat Ears and Head silhouette (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 150,130 L 210,210 L 302,210 L 362,130 L 385,280 C 385,360 320,410 256,410 C 192,410 127,360 127,280 Z" />
+
+    <!-- Sleek Cat Eyes (Netflix Red #DC2626) -->
+    <path
+        android:fillColor="#DC2626"
+        android:pathData="M 185,255 C 195,245 220,240 235,265 C 220,275 195,270 185,255 Z" />
+    <path
+        android:fillColor="#DC2626"
+        android:pathData="M 327,255 C 317,245 292,240 277,265 C 292,275 317,270 327,255 Z" />
+
+    <!-- Cat Nose & Whiskers (Netflix Red #DC2626) -->
+    <path
+        android:fillColor="#DC2626"
+        android:pathData="M 256,295 L 246,310 L 266,310 Z" />
+
+    <!-- Whisker lines (White, extending outside on the red circle) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M 110,290 L 60,285" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M 110,310 L 55,315" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M 402,290 L 452,285" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M 402,310 L 457,315" />
+
+</vector>

@@ -1,0 +1,86 @@
+name: Android CI Build
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v5
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+
+    - name: Set up Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.11.1'
+
+    - name: Decode Keystore
+      run: |
+        if [ -f debug.keystore.base64 ]; then
+          echo "✅ Decoding debug.keystore.base64 from repository..."
+          base64 -d debug.keystore.base64 > debug.keystore
+        elif [ -f debug.keystore ]; then
+          echo "✅ Existing debug.keystore found in repository."
+        else
+          echo "⚠️ Generating persistent keystore..."
+          keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=Android Debug,O=Android,C=US"
+        fi
+
+    - name: Build Android APKs
+      run: |
+        if [ -f gradlew ]; then
+          chmod +x gradlew
+          ./gradlew assembleDebug --stacktrace
+        else
+          echo "Building with configured Gradle 8.11.1..."
+          gradle assembleDebug --stacktrace
+        fi
+
+    - name: Prepare Clean Artifacts
+      run: |
+        mkdir -p build-output
+        APK_DEBUG=$(find app/build/outputs/apk/debug -name "*debug.apk" | head -n 1)
+        if [ -z "$APK_DEBUG" ]; then
+          APK_DEBUG=$(find app/build/outputs/apk -name "*.apk" | head -n 1)
+        fi
+
+        if [ -f "$APK_DEBUG" ]; then
+          echo "✅ Found Debug APK at: $APK_DEBUG"
+          cp "$APK_DEBUG" build-output/iddet-cmo-debug.apk
+          cd build-output
+          sha256sum iddet-cmo-debug.apk > SHA256SUMS.txt
+          echo "=========================================================="
+          echo "IMPORTANT INSTALLATION INSTRUCTIONS:"
+          echo "Si vous avez déjà une version antérieure d'IDDET installée sur votre smartphone,"
+          echo "vous DEVEZ d'abord la désinstaller complètement pour éviter l'erreur"
+          echo "'Installation impossible' (INSTALL_FAILED_UPDATE_INCOMPATIBLE)."
+          echo "=========================================================="
+          ls -la
+          cat SHA256SUMS.txt
+          cd ..
+        else
+          echo "❌ Error: No APK file was found in app/build/outputs!"
+          exit 1
+        fi
+
+    - name: Upload IDDET-CMO APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: iddet-cmo-apk
+        path: |
+          build-output/iddet-cmo-debug.apk
+          build-output/SHA256SUMS.txt
+        if-no-files-found: error
+        retention-days: 14
+        compression-level: 0

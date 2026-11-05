@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Dark music card background -->
+    <path
+        android:fillColor="#18181B"
+        android:pathData="M15,10 h70 a10,10 0 0 1 10,10 v60 a10,10 0 0 1 -10,10 h-70 a10,10 0 0 1 -10,-10 v-60 a10,10 0 0 1 10,-10 z" />
+    <!-- Volume wave circle -->
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M50,50 m-26,0 a26,26 0 1,1 52,0 a26,26 0 1,1 -52,0" />
+    <!-- Speaker & sound waves -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,44 h6 l10,-8 v28 l-10,-8 h-6 z M58,40 a14,14 0 0 1 0,20 v-4 a10,10 0 0 0 0,-12 z" />
+</vector>

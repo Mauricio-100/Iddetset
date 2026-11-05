@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Sky background -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M15,10 h70 a10,10 0 0 1 10,10 v60 a10,10 0 0 1 -10,10 h-70 a10,10 0 0 1 -10,-10 v-60 a10,10 0 0 1 10,-10 z" />
+    <!-- Sun -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M56,38 m-16,0 a16,16 0 1,1 32,0 a16,16 0 1,1 -32,0" />
+    <!-- Cloud -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,68 h40 a14,14 0 0 0 0,-28 a18,18 0 0 0 -34,-4 a12,12 0 0 0 -6,32 z" />
+</vector>

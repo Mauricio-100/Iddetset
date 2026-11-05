@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() { return request.auth != null; }
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+
+    match /users/{userId} {
+      allow get, list: if isSignedIn() && request.auth.uid == userId;
+
+      function isValidUser(data) {
+        return data.uid is string && data.uid == request.auth.uid &&
+               data.email is string &&
+               data.emailVerified is bool &&
+               data.createdAt is timestamp && data.createdAt <= request.time;
+      }
+
+      allow create: if isSignedIn() && request.auth.uid == userId &&
+                       isValidUser(incoming());
+      
+      allow update: if isSignedIn() && request.auth.uid == userId &&
+                       isValidUser(incoming()) &&
+                       incoming().uid == existing().uid &&
+                       incoming().createdAt == existing().createdAt;
+    }
+  }
+}

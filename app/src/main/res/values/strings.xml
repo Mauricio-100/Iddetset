@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><resources><style name="Theme.MyApplication" parent="android:Theme.DeviceDefault.NoActionBar" /><string name="app_name">IDDET</string>
+    <string name="stealth_app_calc">Calculatrice</string>
+    <string name="stealth_app_notes">Bloc-Notes</string>
+    <string name="stealth_app_weather">Météo</string>
+    <string name="stealth_app_audio">Lecteur Audio</string>
+</resources>

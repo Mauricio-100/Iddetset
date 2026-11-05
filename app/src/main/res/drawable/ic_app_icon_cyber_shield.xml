@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Cyber Shield Outer Contour -->
+    <path
+        android:fillColor="#1E1B4B"
+        android:strokeColor="#818CF8"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M54,18 L84,32 L84,60 C84,78 54,92 54,92 C54,92 24,78 24,60 L24,32 Z" />
+    
+    <!-- Inner Cyber Core -->
+    <path
+        android:fillColor="#4F46E5"
+        android:strokeColor="#C7D2FE"
+        android:strokeWidth="1.5"
+        android:pathData="M54,28 L74,38 L74,58 C74,70 54,80 54,80 C54,80 34,70 34,58 L34,38 Z" />
+
+    <!-- Center Keyhole / Core Emblem -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,44 A6,6 0 1,0 54,56 A6,6 0 1,0 54,44 Z M51,55 L57,55 L59,68 L49,68 Z" />
+</vector>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Royal Gold Shield / Crest -->
+    <path
+        android:fillColor="#78350F"
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M54,16 L86,30 L86,60 C86,78 54,92 54,92 C54,92 22,78 22,60 L22,30 Z" />
+    
+    <!-- Imperial Crown Foreground -->
+    <path
+        android:fillColor="#F59E0B"
+        android:strokeColor="#FEF08A"
+        android:strokeWidth="1.5"
+        android:pathData="M32,64 L26,38 L42,48 L54,34 L66,48 L82,38 L76,64 Z" />
+    
+    <!-- Crown Base Bar -->
+    <path
+        android:fillColor="#FDE047"
+        android:pathData="M30,67 L78,67 L78,72 L30,72 Z" />
+
+    <!-- Gem Jewels -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,34 A3,3 0 1,0 54,40 A3,3 0 1,0 54,34 Z M26,38 A3,3 0 1,0 26,44 A3,3 0 1,0 26,38 Z M82,38 A3,3 0 1,0 82,44 A3,3 0 1,0 82,38 Z" />
+</vector>

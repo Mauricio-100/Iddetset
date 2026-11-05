@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_PHONE_CALL" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true">
+        
+        <!-- Disable all automatic telemetry, tracking, and app analysis for absolute privacy -->
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="google_analytics_adid_collection_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="google_analytics_default_allow_ad_personalization_signals"
+            android:value="false" />
+
+        <activity
+            android:name="com.example.MainActivity"
+            android:exported="true"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApplication"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Support Deep Linking via iddet:// custom scheme (Profiles, Communities, Actfiles, Sounds, Videos) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="iddet" />
+            </intent-filter>
+
+            <!-- Support Deep Linking via Web URLs (hoosthubs-g.onrender.com & iddet.app) -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="hoosthubs-g.onrender.com" />
+                <data android:host="iddet.app" />
+                <data android:host="bit.gopu.inc" />
+                <data android:host="iddet.gopu.inc" />
+                <data android:pathPrefix="/u/" />
+                <data android:pathPrefix="/c/" />
+                <data android:pathPrefix="/community/" />
+                <data android:pathPrefix="/actfile/" />
+                <data android:pathPrefix="/sounds/" />
+                <data android:pathPrefix="/video/" />
+                <data android:pathPrefix="/messages/" />
+                <data android:pathPrefix="/s/" />
+            </intent-filter>
+        </activity>
+
+        <!-- Hide It Pro: Signature IDDET Launcher Icon Aliases -->
+        <activity-alias
+            android:name="com.example.MainActivityCyberShield"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_cyber_shield"
+            android:label="@string/app_name"
+            android:targetActivity="com.example.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="com.example.MainActivityQuantumEye"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_quantum_eye"
+            android:label="@string/app_name"
+            android:targetActivity="com.example.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="com.example.MainActivityGoldVip"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_gold_vip"
+            android:label="@string/app_name"
+            android:targetActivity="com.example.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Hide It Pro: Disguised Launcher Icon Aliases -->
+        <activity-alias
+            android:name="com.example.MainActivityCalculator"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_stealth_calc"
+            android:label="@string/stealth_app_calc"
+            android:targetActivity="com.example.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="com.example.MainActivityNotes"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_stealth_notes"
+            android:label="@string/stealth_app_notes"
+            android:targetActivity="com.example.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="com.example.MainActivityWeather"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_stealth_weather"
+            android:label="@string/stealth_app_weather"
+            android:targetActivity="com.example.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="com.example.MainActivityAudio"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_stealth_audio"
+            android:label="@string/stealth_app_audio"
+            android:targetActivity="com.example.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        
+        <service 
+            android:name="com.example.worker.MessageSyncService"
+            android:foregroundServiceType="dataSync"
+            android:exported="false" />
+
+        <service 
+            android:name="com.iddet.calls.IddetFirebaseService" 
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity 
+            android:name="com.iddet.calls.IncomingCallActivity" 
+            android:exported="false"
+            android:showWhenLocked="true" 
+            android:turnScreenOn="true" 
+            android:launchMode="singleTask"/>
+
+        <receiver 
+            android:name="com.iddet.calls.CallActionReceiver" 
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.iddet.calls.ACCEPT"/>
+                <action android:name="com.iddet.calls.DECLINE"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.example.receiver.CallActionReceiver"
+            android:exported="false" />
+    </application>
+
+</manifest>

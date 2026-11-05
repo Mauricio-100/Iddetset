@@ -1,0 +1,6 @@
+{
+  "name": "IDDET",
+  "description": "A private social network with rich actfiles, communities, automated moderation bots, and audit logs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

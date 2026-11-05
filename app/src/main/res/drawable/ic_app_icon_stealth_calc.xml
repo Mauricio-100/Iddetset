@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Calculator body -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M15,10 h70 a10,10 0 0 1 10,10 v60 a10,10 0 0 1 -10,10 h-70 a10,10 0 0 1 -10,-10 v-60 a10,10 0 0 1 10,-10 z" />
+    <!-- Screen -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M20,18 h60 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-60 a4,4 0 0 1 -4,-4 v-14 a4,4 0 0 1 4,-4 z" />
+    <!-- Screen text simulation (digital numbers) -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M66,28 h8 v3 h-8 z M54,28 h8 v3 h-8 z" />
+    <!-- Grid buttons -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M22,46 h14 v10 h-14 z M42,46 h14 v10 h-14 z M62,46 h16 v10 h-16 z M22,60 h14 v10 h-14 z M42,60 h14 v10 h-14 z M62,60 h16 v10 h-16 z M22,74 h14 v10 h-14 z M42,74 h14 v10 h-14 z" />
+    <!-- Equal operator button in vibrant green -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M62,74 h16 v10 h-16 z" />
+</vector>

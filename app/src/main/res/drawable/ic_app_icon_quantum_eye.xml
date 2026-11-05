@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Quantum Cyber Grid Ring -->
+    <path
+        android:strokeColor="#22D3EE"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:pathData="M18,54 C34,26 74,26 90,54 C74,82 34,82 18,54 Z" />
+    
+    <!-- Outer Iris Aperture -->
+    <path
+        android:fillColor="#0891B2"
+        android:strokeColor="#67E8F9"
+        android:strokeWidth="2"
+        android:pathData="M54,34 A20,20 0 1,0 54,74 A20,20 0 1,0 54,34 Z" />
+
+    <!-- Quantum Glowing Pupil -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,44 A10,10 0 1,0 54,64 A10,10 0 1,0 54,44 Z" />
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M54,49 A5,5 0 1,0 54,59 A5,5 0 1,0 54,49 Z" />
+</vector>
